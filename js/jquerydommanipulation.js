@@ -32,9 +32,10 @@ $(document).ready(function () {
     // search bar
     $("#searchh").keyup(function (e){
       let word = $("#searchh").val();
+      $(".deletbutton").hide()
       console.log(word);
       let tasks = $(".datacollector").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(word) > -1),$(".deletbutton").hide();
+        $(this).toggle($(this).text().toLowerCase().indexOf(word) > -1);
     } );
     });
   });

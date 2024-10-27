@@ -29,37 +29,16 @@ $(document).ready(function () {
     });
 
 
-    // search 
-  //   $("#searchh").keyup(function (e){
-  //     let word = $("#searchh").val();
-  //     console.log(word);
-  //     let tasks = $(".datacollector").filter(function() {
-  //       $(this).toggle($(this).val().toLowerCase().indexOf(word) > -1)
-  //     });
-  //   });
-  // });
-      
-      
-  $("#searchh").keyup(function (e) {
-    let word = $("#searchh").val().toLowerCase();
-    console.log(word);
-    let x = $(".datacollector");
-    console.log(x);
-    for (i = 0; i < x.length; i++) {
-    let elementHtml = $(x[i]).text();
-    console.log(elementHtml);
-    }
-    // for (i = 0; i < x.length; i++) {
-    //   let elementHtml = $(x[i]).val().toLowerCase();
-    //   if (!elementHtml.includes(word)) {
-    //     $(x[i]).parent().addClass("hidden");
-    //   } else {
-    //     $(x[i]).parent().removeClass("hidden");
-    //   }
-    // }
-  // });
-}) ;    
-     });
+    // search bar
+    $("#searchh").keyup(function (e){
+      let word = $("#searchh").val();
+      console.log(word);
+      let tasks = $(".datacollector").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(word) > -1),$(".deletbutton").hide();
+    } );
+    });
+  });
+
   
 
   
